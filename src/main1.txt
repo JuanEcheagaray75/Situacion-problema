@@ -1,0 +1,47 @@
+#include <iostream>
+#include <ctime>
+#include <chrono>
+#include "Video.hpp"
+#include "Pelicula.hpp"
+#include "Serie.hpp"
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    auto started = std::chrono::high_resolution_clock::now();
+    clock_t start, end;
+    start = clock();
+    // 1o Declaracion de objetos de las clases Pelicula, Episodio y Serie
+    Pelicula pelicula1("100", "PELICULA", 120, "COMEDIA", 10, 5);
+    Episodio episodio1, episodio2("EPISODIO_2_", 6, 4.5);
+    Serie serie1;
+
+    // Desplegar el contenido de serie1
+    cout << serie1.str() << endl;
+
+    // modificar el contenido de episodio1
+    episodio1.setTitulo("EPISODIO_1_");
+    episodio1.setTemporada(5);
+    episodio1.setCalificacion(5);
+
+    // modificar el contenido de serie1
+    serie1.setTitulo("VERANO2021");
+    serie1.setId("500");
+    serie1.setDuracion(10000);
+    serie1.setGenero("ACCION");
+    serie1.setCalificacion(5);
+
+    end = clock();
+    auto done = std::chrono::high_resolution_clock::now();
+
+    // Desplegar los objetos
+    cout << pelicula1.str() << '\n'
+         << episodio1.str() << '\n'
+         << episodio2.str() << '\n'
+         << serie1.str() << '\n';
+
+    cout << "Time taken: " << (end - start) /  CLOCKS_PER_SEC << "\n";
+    cout << "Time taken ms: " << std::chrono::duration_cast<std::chrono::milliseconds>(done-started).count();
+
+    return 0;
+}
