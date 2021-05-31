@@ -39,70 +39,55 @@ int main()
 {
     // se manda llamar al constructor - default
     Peliculas peliculas;
-    // Polimorfismo - {} llama al constructor default Video
-    // Videos2 videos{};
     Series series;
-    //   Pelicula arrPeliculas[50], pelicula{};
 
     int iOpcion;
     string sGenero, sId;
     double dCal;
 
-    // Leer el archivo de peliculas y cargarlo en el arreglo de apuntadores
-    // dentro de la clase Peliculas
     peliculas.leerArchivo();
     series.leerArchivo();
-
-    // 1o Inicializar la vcc antes del ciclo
     iOpcion = menuPeliculas();
-    // 2a Incluir en la condicion la vcc
+
     while (iOpcion != 0)
     {
         switch (iOpcion)
         {
-            // ***** Peliculas
-        case 1: // 1. Leer Peliculas  desde Archivo" <<
+        case 1:
             peliculas.leerArchivo();
             break;
-        case 2: // 2. Reporte de todas las peliculas" <<
+        case 2: 
             peliculas.reporteTodasLasPeliculas();
             break;
-        case 3: // 3. Reporte de todas las peliculas con cierta Calificacion" <<
-            //  cout << "Ingresa la calificacion:";
+        case 3: 
             cin >> dCal;
             peliculas.reporteConCalificacion(dCal);
             break;
-        case 4: // 4. Reporte de todas las peliculas con cierto genero" <<
-            //  cout << "Ingresa el Genero:";
+        case 4: 
             cin >> sGenero;
             peliculas.reporteGenero(sGenero);
             break;
-        case 5: // leer videos
+        case 5:
             series.leerArchivo();
             break;
-        case 6: // 6. Reporte de todas las Series"
+        case 6:
             series.reporteTodasLasSeries();
             break;
-        case 7: // 7. Reporte de Series que tienen cierta Calificacion
-            // cout << "Ingresa la calificación:";
+        case 7:
             cin >> dCal;
             series.reporteConCalificacion(dCal);
             break;
-        case 8: // 8. Reporte de Series de cierto genero
-            // cout << "Ingresa el Genero:";
+        case 8:
             cin >> sGenero;
             series.reporteGenero(sGenero);
-            //  videos.reporteVideos();
             break;
-        case 9: // 9. Calcular calificación de todas las Series
+        case 9:
             series.calcularCalificacionSeries();
-            // series.reporteTodasLasSeries();
             break;
         default:
             cout << "Opcion Incorrecta\n";
             break;
         }
-        //3o Actualizar la vcc dentro del ciclo
         iOpcion = menuPeliculas();
     }
     return 0;
