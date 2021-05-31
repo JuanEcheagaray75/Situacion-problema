@@ -6,7 +6,6 @@ Created:  2021-05-21T23:38:06.429Z
 Modified: !date!
 */
 
-// Comentario para ver como funciona el commit en Git
 #include <iostream>
 #include "Peliculas.hpp"
 #include "Series.hpp"
@@ -32,9 +31,7 @@ int menuPeliculas()
     cin >> iOpcion;
     return iOpcion;
 }
-// ******************************
-//            AVANCE 3
-// *******************************
+
 int main()
 {
     // se manda llamar al constructor - default

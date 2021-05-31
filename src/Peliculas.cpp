@@ -48,11 +48,8 @@ void Peliculas::setPtrPelicula(Pelicula *_peliptr, int _index)
 }
 
 // Métodos extra
-// La maestra se merece un pastel por pasarnos esta función
 void Peliculas::leerArchivo()
 {
-    // Los comentarios con código tienen la implementación para que veas como está trabajando el algoritmo
-
     // Declaración de variables
     fstream fin;
     string row[6];
@@ -75,22 +72,9 @@ void Peliculas::leerArchivo()
 
         // Modificación del arreglo de películas
         arrPtrPeliculas[cantidad] = new Pelicula(row[0], row[1], stoi(row[2]), row[3], stod(row[4]), stoi(row[5]));
-        /* 
-        cout << "ID: " << row[0] << "\n";
-        cout << "Titulo: " << row[1] << "\n";
-        cout << "Duracion: " << row[2] << "\n";
-        cout << "Genero: " << row[3] << "\n";
-        cout << "Calificacion: " << row[4] << "\n";
-        cout << "Oscares: " << row[5] << "\n";
-
-        cout << "Dentro del objeto:" << arrPtrPeliculas[cantidad]->str() << "\n"; */
         cantidad++;
     }
     fin.close();
-    /*     for (int i = 0; i < cantidad; i++)
-    {
-        cout << i << "-" << arrPtrPeliculas[i]->str() << "\n";
-    } */
 }
 
 void Peliculas::reporteTodasLasPeliculas()
