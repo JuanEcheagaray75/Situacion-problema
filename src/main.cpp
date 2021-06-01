@@ -13,7 +13,6 @@ Modified: !date!
 int menuPeliculas()
 {
     int iOpcion;
-
 /*     cout << "\n *******  Peliculas *******"
          << "\n1. Leer Peliculas  desde Archivo"
          << "\n2. Reporte de todas las peliculas"
